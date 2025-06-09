@@ -45,6 +45,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.keymap.set('n', 'x', '"_x')
+vim.keymap.set('n', 'X', '"_X')
+
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Open [u]ndotree panel' })
 
 -- vim: ts=2 sts=2 sw=2 et

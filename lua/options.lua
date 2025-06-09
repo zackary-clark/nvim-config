@@ -69,4 +69,9 @@ vim.opt.virtualedit = 'onemore'
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+vim.g.autoformat = false
+vim.g.whichwrap = 'h,l'
+
+vim.diagnostic.config { virtual_text = true }
+
 -- vim: ts=2 sts=2 sw=2 et
