@@ -37,6 +37,17 @@ return {
     },
     filesystem = {
       hijack_netrw_behavior = 'open_current',
+      find_command = 'fd',
+      find_args = {
+        fd = {
+          '--exclude',
+          '.git',
+          '--exclude',
+          'node_modules',
+          '--exclude',
+          'dist',
+        },
+      },
       follow_current_file = {
         enabled = true,
         leave_dirs_open = true,
