@@ -45,10 +45,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- x and c should not overwrite unnamed register
 vim.keymap.set('n', 'x', '"_x')
 vim.keymap.set('n', 'X', '"_X')
 vim.keymap.set('n', 'c', '"_c')
 vim.keymap.set('n', 'C', '"_C')
+
+vim.keymap.set('n', '<leader>yp', '<cmd>let @+=expand("%")<CR>', { desc = "'[y]ank' relative [p]ath to system register" })
+vim.keymap.set('n', '<leader>yP', '<cmd>let @+=expand("%:p")<CR>', { desc = "'[y]ank' absolute [P]ath to system register" })
+vim.keymap.set('n', '<leader>yn', '<cmd>let @+=expand("%:t")<CR>', { desc = "'[y]ank' file[n]ame to system register" })
 
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Open [u]ndotree panel' })
 
