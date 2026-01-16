@@ -74,4 +74,12 @@ vim.g.whichwrap = 'h,l'
 
 vim.diagnostic.config { virtual_text = true }
 
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+  desc = "keymap 'q' to close help/quickfix/netrw/etc windows",
+  pattern = 'help,qf,netrw',
+  callback = function()
+    vim.keymap.set('n', 'q', '<C-w>c', { buffer = true, desc = 'Quit (or Close) help, quickfix, netrw, etc windows' })
+  end,
+})
+
 -- vim: ts=2 sts=2 sw=2 et
