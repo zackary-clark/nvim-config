@@ -34,6 +34,7 @@ return {
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'brenoprata10/nvim-highlight-colors',
     },
     config = function()
       -- See `:help cmp`
@@ -46,6 +47,9 @@ return {
           expand = function(args)
             luasnip.lsp_expand(args.body)
           end,
+        },
+        formatting = {
+          format = require('nvim-highlight-colors').format,
         },
         completion = { completeopt = 'menu,menuone,noinsert' },
 
